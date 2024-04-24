@@ -48,7 +48,7 @@ const UPDATE_STATE_BY_ACTION = {
             const new_state = [
                 ...state.slice(0, productInCartIndex),
                 { ...state[productInCartIndex], 
-                    quantity: calculation ? state[productInCartIndex].quantity + value : state[productInCartIndex].quantity = value 
+                    quantity: calculation ? state[productInCartIndex].quantity + Number(value) : Number(value) 
                 },
                 ...state.slice(productInCartIndex + 1)
             ]
