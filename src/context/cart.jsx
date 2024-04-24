@@ -18,18 +18,28 @@ function useCartContext() {
 
     const cleanCart = () => dispatch({ type: 'CLEAN_CART' })
 
-    return { state, addToCart, removeFromCart, cleanCart }
+    const update_quantity = (producto, value, calculation) => dispatch({
+        type: 'UPDATE_QUANTITY',
+        payload: producto,
+        quantity: {  
+            value: value,
+            calculation: calculation
+        }
+    })
+
+    return { state, addToCart, removeFromCart, cleanCart, update_quantity }
 } 
 
 export function CartProvider() {
-    const {state, addToCart, removeFromCart, cleanCart } = useCartContext()
+    const {state, addToCart, removeFromCart, cleanCart, update_quantity } = useCartContext()
 
     return (
         <CartContext.Provider value={{
             cart: state,
             addToCart,
             removeFromCart,
-            cleanCart
+            cleanCart,
+            update_quantity
         }}>
             {children}
         </CartContext.Provider>

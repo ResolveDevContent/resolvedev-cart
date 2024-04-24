@@ -2,6 +2,7 @@ export const cartInitialState = JSON.parse(window.localStorage.getItem("cart")) 
 
 export const CART_ACTION_TYPES = {
     ADD_TO_CART: "ADD_TO_CART",
+    UPDATE_QUANTITY: "UPDATE_QUANTITY",
     REMOVE_FROM_CART: "REMOVE_FROM_CART",
     CLEAR_CART: "CLEAR_CART"
 }
@@ -49,6 +50,27 @@ const UPDATE_STATE_BY_ACTION = {
     [CART_ACTION_TYPES.CLEAR_CART]: () => {
         updateLocalStorage([]);
         return [];
+    },
+
+    [CART_ACTION_TYPES.UPDATE_QUANTITY]: (state, action) => {
+        const { id } = action.payload,
+              { value, calculation } = action.quantity,
+                productInCartIndex = state.findIndex((item) => item.id === id);
+
+        if(productInCartIndex >= 0) {
+            const new_state = [
+                ...state.slice(0, productInCartIndex),
+                { ...state[productInCartIndex], 
+                    quantity: calculation ? state[productInCartIndex].quantity + value : state[productInCartIndex].quantity = value 
+                },
+                ...state.slice(productInCartIndex + 1)
+            ]
+
+            updateLocalStorage(new_state);
+            return new_state;
+        }
+        
+        return state;
     }
 }
 
