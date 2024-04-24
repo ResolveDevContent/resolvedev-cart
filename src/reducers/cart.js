@@ -39,19 +39,6 @@ const UPDATE_STATE_BY_ACTION = {
         return new_state;
     },
 
-    [CART_ACTION_TYPES.REMOVE_FROM_CART]: (state, action) => {
-        const { id } = action.payload,
-                new_state = state.filter((item) => item.id !== id);
-
-        updateLocalStorage(new_state);
-        return new_state;
-    },
-
-    [CART_ACTION_TYPES.CLEAR_CART]: () => {
-        updateLocalStorage([]);
-        return [];
-    },
-
     [CART_ACTION_TYPES.UPDATE_QUANTITY]: (state, action) => {
         const { id } = action.payload,
               { value, calculation } = action.quantity,
@@ -71,6 +58,19 @@ const UPDATE_STATE_BY_ACTION = {
         }
         
         return state;
+    },
+
+    [CART_ACTION_TYPES.REMOVE_FROM_CART]: (state, action) => {
+        const { id } = action.payload,
+                new_state = state.filter((item) => item.id !== id);
+
+        updateLocalStorage(new_state);
+        return new_state;
+    },
+
+    [CART_ACTION_TYPES.CLEAR_CART]: () => {
+        updateLocalStorage([]);
+        return [];
     }
 }
 

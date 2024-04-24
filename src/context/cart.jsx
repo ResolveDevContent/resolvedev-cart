@@ -11,13 +11,6 @@ function useCartContext() {
         payload: producto
     })
 
-    const removeFromCart = producto => dispatch({
-        type: 'REMOVE_FROM_CART',
-        payload: producto
-    })
-
-    const cleanCart = () => dispatch({ type: 'CLEAN_CART' })
-
     const update_quantity = (producto, value, calculation) => dispatch({
         type: 'UPDATE_QUANTITY',
         payload: producto,
@@ -26,6 +19,13 @@ function useCartContext() {
             calculation: calculation
         }
     })
+
+    const removeFromCart = producto => dispatch({
+        type: 'REMOVE_FROM_CART',
+        payload: producto
+    })
+
+    const cleanCart = () => dispatch({ type: 'CLEAN_CART' })
 
     return { state, addToCart, removeFromCart, cleanCart, update_quantity }
 } 
