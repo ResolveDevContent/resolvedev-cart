@@ -10,7 +10,7 @@
           "stock":54,
           "brand":"Golden",
           "category":"home-decoration",
-          "thumbnail":"https://i.dummyjson.com/data/products/30/thumbnail.jpg"
+          "thumbnail":"https://i.etsystatic.com/12626944/r/il/407933/2513309248/il_570xN.2513309248_qvhp.jpg"
        },
        {
           "id":6,
@@ -22,7 +22,7 @@
           "stock":83,
           "brand":"Apple",
           "category":"laptops",
-          "thumbnail":"https://i.dummyjson.com/data/products/6/thumbnail.png"
+          "thumbnail":"https://d2ihpvt6nd5q28.cloudfront.net/wp-content/uploads/2022/08/mbp-silver-gallery2-202206_GEO_MX.jpg"
        },
        {
           "id":2,
@@ -34,7 +34,7 @@
           "stock":34,
           "brand":"Apple",
           "category":"smartphones",
-          "thumbnail":"https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+          "thumbnail":"https://www.apple.com/newsroom/images/product/iphone/standard/iphonex_front_back_glass_big.jpg.large.jpg"
        },
        {
           "id":3,
@@ -46,7 +46,7 @@
           "stock":36,
           "brand":"Samsung",
           "category":"smartphones",
-          "thumbnail":"https://i.dummyjson.com/data/products/3/thumbnail.jpg"
+          "thumbnail":"https://pbs.twimg.com/media/Dr2wz4AU4AEXQeN.jpg"
        },
        {
           "id":4,
@@ -58,7 +58,7 @@
           "stock":123,
           "brand":"OPPO",
           "category":"smartphones",
-          "thumbnail":"https://i.dummyjson.com/data/products/4/thumbnail.jpg"
+          "thumbnail":"https://opsg-img-cdn-gl.heytapimg.com/epb/202207/07/hxwnSiSJ89urUqAQ.png?x-amz-process=image/format,webp/quality,Q_80"
        },
        {
           "id":5,
@@ -70,7 +70,7 @@
           "stock":32,
           "brand":"Huawei",
           "category":"smartphones",
-          "thumbnail":"https://i.dummyjson.com/data/products/5/thumbnail.jpg"
+          "thumbnail":"https://m.media-amazon.com/images/I/61Z79js8OhL._AC_SL1000_.jpg"
        }
     ]
 }

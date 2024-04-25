@@ -6,9 +6,13 @@ import { CartProvider } from './context/cart';
 function App() {
   return (
     <CartProvider>
-      <h1>Tienda online</h1>
+      <header id='header'>
+        <nav className='navbar'>
+          <h1>Tienda online</h1>
+          <Cart />
+        </nav>
+      </header>
       <Productos />
-      <Cart />
     </CartProvider>
   );
 }

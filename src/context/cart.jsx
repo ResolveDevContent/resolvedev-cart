@@ -11,6 +11,11 @@ function useCartContext() {
         payload: producto
     })
 
+    /**
+     * @param {Object} producto Producto a actualizar.
+     * @param {number} value Cantidad del producto a actualizar.
+     * @param {boolean} calculation Si se quiere una SUMA o RESTA debera ser TRUE si no FALSE.
+    */
     const updateQuantity = (producto, value = 1, calculation = true) => dispatch({
         type: 'UPDATE_QUANTITY',
         payload: producto,

@@ -2,7 +2,7 @@ import './productos.css'
 
 import { products as productos} from '../mocks/productos.json'
 import { useCart } from '../hook/useCart.js'
-// import { AddToCartIcon, RemoveFromCartIcon } from '../icons/Icons.jsx'
+import { AddToCartIcon, RemoveFromCartIcon } from '../icons/Icons.jsx'
 
 export const Productos = () => {
     const { addToCart, removeFromCart, cart } = useCart()
@@ -15,13 +15,15 @@ export const Productos = () => {
 
                 return (
                 <li key={prod.id} className="producto">
-                    <img
-                    src={prod.thumbnail}
-                    alt={prod.title}
-                    />
+                    <header>
+                        <img
+                            src={prod.thumbnail}
+                            alt={prod.title}
+                        />
+                    </header>
                     <div>
                         <div>
-                            <strong>{prod.title}</strong><span>- ${prod.price}</span>
+                            <strong>{prod.title}</strong><span>${prod.price}</span>
                         </div>
 
                         <footer>
@@ -29,10 +31,10 @@ export const Productos = () => {
                                 inCart ? removeFromCart(prod)
                                        : addToCart(prod)
                                        }}>
-                                {/* { 
-                                    inCart ? <AddToCartIcon /> 
-                                           : <RemoveFromCartIcon /> 
-                                } */ 'hola'}
+                                { 
+                                    inCart ? <RemoveFromCartIcon />
+                                           :  <AddToCartIcon /> 
+                                }
                             </button>
                         </footer>
                     </div>

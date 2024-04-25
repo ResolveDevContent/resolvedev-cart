@@ -4,7 +4,6 @@ ul {
 
 article {
     padding: 1em;
-    background-color: grey;
 }
 
 article > ul {
@@ -14,7 +13,7 @@ article > ul {
     margin: 1em;
     border-radius: 1em;
     background-color: white;
-    padding: 1em;
+    padding: 2em;
 }
 
 .producto {
@@ -24,10 +23,13 @@ article > ul {
     justify-content: center;
 }
 
-.producto > img {
+.producto header {
+    height: 10em;
+}
+
+.producto > header img {
     width: 100%;
-    height: 5em;
-    background-color: cadetblue;
+    height: 100%;
 }
 .producto > div {
     width: 100%;
