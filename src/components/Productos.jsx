@@ -1,45 +1,45 @@
+import './productos.css'
+
 import { products as productos} from '../mocks/productos.json'
 import { useCart } from '../hook/useCart.js'
+// import { AddToCartIcon, RemoveFromCartIcon } from '../icons/Icons.jsx'
 
 export const Productos = () => {
-    const { addToCart, removeFromCart, cart, updateQuantity, clearCart } = useCart()
+    const { addToCart, removeFromCart, cart } = useCart()
 
     return (
-        <div>
+        <article>
             <ul>
             {productos.map(prod => {
+                const inCart = cart.some(item => prod.id == item.id)
+
                 return (
-                <li key={prod.id}>
+                <li key={prod.id} className="producto">
                     <img
                     src={prod.thumbnail}
                     alt={prod.title}
                     />
                     <div>
-                    <strong>{prod.title}</strong> - ${prod.price}
-                    </div>
+                        <div>
+                            <strong>{prod.title}</strong><span>- ${prod.price}</span>
+                        </div>
 
-                    <footer>
-                    <small>
-                        Qty: {prod.quantity}
-                    </small>
-                    <button onClick={() => addToCart(prod)}>Agrega</button>
-                    <button onClick={() => updateQuantity(prod, 1, true)}>+</button>
-                    <button onClick={() => updateQuantity(prod, -1, true)}>-</button>
-                    <input type="number" onChange={e => updateQuantity(prod, e.target.value, false)}/>
-                    <button onClick={() => removeFromCart(prod)}>eliminar</button>
-                    </footer>
+                        <footer>
+                            <button onClick={() => {
+                                inCart ? removeFromCart(prod)
+                                       : addToCart(prod)
+                                       }}>
+                                {/* { 
+                                    inCart ? <AddToCartIcon /> 
+                                           : <RemoveFromCartIcon /> 
+                                } */ 'hola'}
+                            </button>
+                        </footer>
+                    </div>
                 </li>
                 )
             })}
             </ul>
-            <div>
-                {cart.map(item => {
-                    return (
-                        <div key={item.id}>{item.title} : {item.quantity}</div>
-                    )
-                })}
-            </div>
-            <button onClick={clearCart}>Vaciar carrinho</button>
-        </div>
+        </article>
     )
 }

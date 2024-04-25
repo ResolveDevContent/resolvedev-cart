@@ -11,7 +11,7 @@ function useCartContext() {
         payload: producto
     })
 
-    const updateQuantity = (producto, value, calculation) => dispatch({
+    const updateQuantity = (producto, value = 1, calculation = true) => dispatch({
         type: 'UPDATE_QUANTITY',
         payload: producto,
         quantity: {  

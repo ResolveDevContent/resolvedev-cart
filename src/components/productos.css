@@ -1,0 +1,52 @@
+ul {
+    list-style: none;
+}
+
+article {
+    padding: 1em;
+    background-color: grey;
+}
+
+article > ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1em;
+    margin: 1em;
+    border-radius: 1em;
+    background-color: white;
+    padding: 1em;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.producto > img {
+    width: 100%;
+    height: 5em;
+    background-color: cadetblue;
+}
+.producto > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.producto > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+.producto > div > div > strong {
+
+}
+.producto > div > div > span {
+
+}
+.producto > div > footer{}
+.producto > div > footer > button {}
