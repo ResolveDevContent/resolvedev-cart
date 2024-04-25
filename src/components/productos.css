@@ -21,6 +21,9 @@ article > ul {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+    border-radius: 1em;
+    padding: 1em;
 }
 
 .producto header {
@@ -42,7 +45,7 @@ article > ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1em;
+    padding: .5em;
 }
 .producto > div > div > strong {
 
@@ -50,5 +53,10 @@ article > ul {
 .producto > div > div > span {
 
 }
-.producto > div > footer{}
-.producto > div > footer > button {}
+.producto .quantity > button {
+
+}
+.producto > div > footer > button {
+    border-radius: 1em;
+    border: none;
+}

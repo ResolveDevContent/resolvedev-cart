@@ -1,17 +1,41 @@
-section > .cart button {
-    background-color: white;
+button {
     border: none;
 }
 
 .cart {
-    background: #1e1e1e;
+    background: white;
     display: none;
-    padding: 2em;
     position: fixed;
     right: 0px;
     top: 0px;
-    width: 20em;
     z-index: 100;
+    flex-direction: column;
+    align-items: center;
+    width: 20em;
+}
+
+.cart > ul {
+    max-width: 20em;
+    padding: 2em 2em 5em 2em;
+    overflow-y: auto;
+}
+
+.cart > footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+}
+
+.cart > footer > button {
+    background-color: red;
+    padding: .5em 1em;
+    border-radius: 1em;
+    margin-block: 1em;
+}
+
+.cart > button:hover {
+    background-color: rgb(255, 63, 63);
 }
   
 .cart img {
@@ -19,8 +43,13 @@ section > .cart button {
 }
   
 .cart li {
-    border-bottom: 1px solid #444;
-    padding-bottom: 1em;
+    padding: 1em;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.2);
+    border-radius: 1em;
+}
+
+.cart li + li {
+    margin-top: 1em;
 }
   
 .cart footer {
@@ -40,15 +69,10 @@ section > .cart button {
     border-radius: 50%;
     cursor: pointer;
     display: flex;
-    height: 2em;
     justify-content: center;
-    padding: 4px;
-    position: absolute;
-    right: 1.8em;
-    top: 1.8em;
+    padding: .25em;
     transition: all .3s ease;
-    width: 2em;
-    z-index: 9999;
+    position: relative;
 }
   
 .cart-button:hover {
@@ -58,7 +82,12 @@ section > .cart button {
 .cart-button ~ input:checked ~ .cart,
 .cart-button ~ input:checked ~ .background{
     height: 100%;
-    display: block;
+    display: flex;
+}
+
+.cart-button > svg {
+    width: 3em;
+    height: 3em;
 }
 
 .background {
@@ -84,6 +113,7 @@ section > .cart button {
 
 .producto-cart header {
     height: 10em;
+    width: 100%;
 }
 
 .producto-cart > header img {
@@ -101,21 +131,46 @@ section > .cart button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1em;
+    padding: .5em;
 }
-.producto-cart > div > div > strong {
-    color: white;
-}
+.producto-cart > div > div > strong,
 .producto-cart > div > div > em {
-    color: white
+    color: black;
 }
 .producto-cart > div > footer{
     display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
 .producto-cart > div > footer .quantity {
     display: flex;
+    align-items: center;
     gap: 0.5em;
+    border-radius: 2em;
+    border: 1px solid black;
+    padding-inline: .5em;
 }
-.producto-cart > div > footer > button {}
+.producto-cart .quantity > button {
+    padding: .5em 1em;
+    width: 1em;
+    border-radius: 50%;
+    color: red;
+    font-size: 1.125em;
+}
+.producto-cart .quantity > input {
+    width: 3em;
+    text-align: center;
+    border: none;
+    padding-block: 1em;
+    outline: none;
+}
+
+.producto-cart .quantity + button {
+    background-color: red;
+    padding: .5em 1em;
+    border-radius: 1em;
+}
+
+.producto-cart .quantity + button:hover {
+    background-color: rgb(255, 63, 63);
+}

@@ -9,16 +9,13 @@ export const Cart = () => {
 
     return (
         <section>
-            <label className='cart-button' htmlFor={cartCheckboxId}>
-                <CartIcon items={cart.length}/>
+            <label className='cart-button' htmlFor={cartCheckboxId} data-item={cart.length}>
+                <CartIcon />
             </label>
             <input id={cartCheckboxId} type='checkbox' hidden />
 
             <label htmlFor={cartCheckboxId} className="background"></label>
             <aside className="cart">
-                <button onClick={clearCart}>
-                    <ClearCartIcon />
-                </button>
                 <ul>
                     {cart.map(item => {
                         return (
@@ -54,6 +51,11 @@ export const Cart = () => {
                         )
                     })}
                 </ul>
+                <footer>
+                    <button onClick={clearCart}>
+                        <ClearCartIcon />
+                    </button>
+                </footer>
             </aside>
         </section>
     )

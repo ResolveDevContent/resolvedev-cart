@@ -27,14 +27,16 @@ export const Productos = () => {
                         </div>
 
                         <footer>
-                            <button onClick={() => {
-                                inCart ? removeFromCart(prod)
-                                       : addToCart(prod)
-                                       }}>
-                                { 
-                                    inCart ? <RemoveFromCartIcon />
-                                           :  <AddToCartIcon /> 
-                                }
+                            <button 
+                                style={{ backgroundColor: inCart ? 'red' : '#00ac64' }}
+                                onClick={() => {
+                                    inCart ? removeFromCart(prod)
+                                           : addToCart(prod)
+                                        }}>
+                                    { 
+                                        inCart ? <RemoveFromCartIcon />
+                                               :  <AddToCartIcon /> 
+                                    }
                             </button>
                         </footer>
                     </div>
