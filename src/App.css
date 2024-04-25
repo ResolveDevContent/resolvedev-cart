@@ -39,8 +39,8 @@ button:hover {
 .cart-button[data-item]::after {
     content: attr(data-item);
     position: absolute;
-    left: 2.25em;
-    bottom: 2em;
+    left: 2em;
+    bottom: 1.5em;
     background-color: rgb(189, 0, 0);
     padding: .125em;
     border-radius: 50%;
@@ -53,6 +53,7 @@ button:hover {
     color: white;
 }
 
-.cart-items[data-item='0']::after {
+.cart-button[data-item='0']::after,
+.cart-button[data-item='']::after {
     display: none;
 }

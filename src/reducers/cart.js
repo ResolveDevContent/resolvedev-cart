@@ -53,6 +53,11 @@ const UPDATE_STATE_BY_ACTION = {
         const { id } = action.payload,
               { value, calculation } = action.quantity,
                 productInCartIndex = state.findIndex((item) => item.id === id);
+        
+        if((calculation && state[productInCartIndex].quantity + Number(value) < 1) || 
+            (!calculation && Number(value) < 1)) {
+                return state;
+            }
 
         if(productInCartIndex >= 0) {
             const new_state = [

@@ -36,13 +36,13 @@ export const Cart = () => {
 
                                     <footer>
                                         <div className="quantity">
-                                            <button onClick={() => updateQuantity(item, 1, true)}>+</button>
+                                            <button onClick={() => updateQuantity(item, -1, true)}>-</button>
                                             <input type="number" 
                                                 onChange={e => updateQuantity(item, e.target.value, false)} 
                                                 value={item.quantity}/>
-                                            <button onClick={() => updateQuantity(undefined, -1, true)}>-</button>
+                                            <button onClick={() => updateQuantity(item, 1, true)}>+</button>
                                         </div>
-                                        <button onClick={() => removeFromCart(item)}>
+                                        <button onClick={() => removeFromCart(item)} title="Eliminar">
                                             <RemoveFromCartIcon />
                                         </button>
                                     </footer>
@@ -51,8 +51,12 @@ export const Cart = () => {
                         )
                     })}
                 </ul>
+                <div className="empty-state">
+                    <CartIcon />
+                    <em>No hay productos en su carrito</em>
+                </div>
                 <footer>
-                    <button onClick={clearCart}>
+                    <button onClick={clearCart} title="Vaciar carrito">
                         <ClearCartIcon />
                     </button>
                 </footer>

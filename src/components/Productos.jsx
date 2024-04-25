@@ -32,7 +32,8 @@ export const Productos = () => {
                                 onClick={() => {
                                     inCart ? removeFromCart(prod)
                                            : addToCart(prod)
-                                        }}>
+                                        }}
+                                    title={inCart ? 'Eliminar' : 'Agregar'}>
                                     { 
                                         inCart ? <RemoveFromCartIcon />
                                                :  <AddToCartIcon /> 

@@ -8,7 +8,7 @@ article {
 
 article > ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1em;
     margin: 1em;
     border-radius: 1em;
@@ -26,7 +26,7 @@ article > ul {
     padding: 1em;
 }
 
-.producto header {
+.producto > header {
     height: 10em;
 }
 
@@ -48,15 +48,45 @@ article > ul {
     padding: .5em;
 }
 .producto > div > div > strong {
-
-}
-.producto > div > div > span {
-
-}
-.producto .quantity > button {
-
+    text-align: center;
 }
 .producto > div > footer > button {
     border-radius: 1em;
     border: none;
+}
+
+@media screen and (max-width: 400px) {
+    article {
+        padding: 0;
+    }
+
+    article > ul {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-button > svg {
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    .producto > div > footer > button > svg {
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    .navbar > h1 {
+        font-size: 1em;
+    }
+
+    .producto > div > div > strong {
+        font-size: .75em;
+    }
+
+    .producto > div > div > span {
+        font-size: .75em;
+    }
+
+    .producto > header {
+        height: auto;
+    }
 }
