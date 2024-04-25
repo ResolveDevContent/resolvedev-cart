@@ -40,7 +40,7 @@ export const Cart = () => {
                                             <input type="number" 
                                                 onChange={e => updateQuantity(item, e.target.value, false)} 
                                                 value={item.quantity}/>
-                                            <button onClick={() => updateQuantity(item, -1, true)}>-</button>
+                                            <button onClick={() => updateQuantity(undefined, -1, true)}>-</button>
                                         </div>
                                         <button onClick={() => removeFromCart(item)}>
                                             <RemoveFromCartIcon />

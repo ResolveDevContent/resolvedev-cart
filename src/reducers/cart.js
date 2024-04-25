@@ -13,6 +13,11 @@ export const updateLocalStorage = (state) => {
 
 const UPDATE_STATE_BY_ACTION = {
     [CART_ACTION_TYPES.ADD_TO_CART]: (state, action) => {
+        if(!action.payload) {
+            console.error("Producto is undefined")
+            return state;
+        }
+
         const { id } = action.payload,
                 productInCartIndex = state.findIndex((item) => item.id === id);
 
@@ -40,6 +45,11 @@ const UPDATE_STATE_BY_ACTION = {
     },
 
     [CART_ACTION_TYPES.UPDATE_QUANTITY]: (state, action) => {
+        if(!action.payload) {
+            console.error("Producto is undefined")
+            return state;
+        }
+        
         const { id } = action.payload,
               { value, calculation } = action.quantity,
                 productInCartIndex = state.findIndex((item) => item.id === id);
@@ -61,6 +71,11 @@ const UPDATE_STATE_BY_ACTION = {
     },
 
     [CART_ACTION_TYPES.REMOVE_FROM_CART]: (state, action) => {
+        if(!action.payload) {
+            console.error("Producto is undefined")
+            return state;
+        }
+        
         const { id } = action.payload,
                 new_state = state.filter((item) => item.id !== id);
 
