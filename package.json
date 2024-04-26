@@ -1,6 +1,6 @@
 {
   "name": "resolvedev-cart",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "type": "module",
   "main": "lib/src/index.js",
   "module": "lib/src/index.js",
@@ -19,18 +19,18 @@
     "prepare": "swc ./src/context/cart.jsx ./src/reducers/cart.js ./src/hook/useCart.js -d lib"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.34.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
-    "vite": "^5.2.0"
+    "@types/react": "18.2.66",
+    "@types/react-dom": "18.2.22",
+    "@vitejs/plugin-react-swc": "3.5.0",
+    "eslint": "8.57.0",
+    "eslint-plugin-react": "7.34.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-react-refresh": "0.4.6",
+    "vite": "5.2.0"
   },
   "dependencies": {
     "@swc/cli": "^0.3.12",

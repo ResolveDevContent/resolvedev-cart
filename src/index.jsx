@@ -1,4 +1,5 @@
 export {useCart} from './hook/useCart'
+export {CartProvider} from './context/cart'
 export {CartContext} from './context/cart'
 export {cartReducer} from './reducers/cart'
 export {cartInitialState} from './reducers/cart'
