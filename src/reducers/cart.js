@@ -36,7 +36,7 @@ const UPDATE_STATE_BY_ACTION = {
             ...state,
             {
                 ...action.payload,
-                quantity: 1
+                quantity: action.payload.quantity ? action.payload.quantity : 1,
             }
         ]
 
