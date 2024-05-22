@@ -54,7 +54,7 @@ const UPDATE_STATE_BY_ACTION = {
               { value, calculation } = action.quantity,
                 productInCartIndex = state.findIndex((item) => item.id === id);
         
-        if((calculation && state[productInCartIndex].quantity + Number(value) < 1) || 
+        if((calculation && state[productInCartIndex] && state[productInCartIndex].quantity + Number(value) < 1) || 
             (!calculation && Number(value) < 1)) {
                 return state;
             }
