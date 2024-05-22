@@ -24,7 +24,7 @@ export const Productos = () => {
                     <div>
                         <div>
                             <strong>{prod.title}</strong><span>${prod.price}</span>
-                            <input type="number" onChange={updateQuantity(prod, 1, true)}/>
+                            <input type="number" onChange={(e) => updateQuantity(prod, e.target.value, false)}/>
                         </div>
 
                         <footer>
