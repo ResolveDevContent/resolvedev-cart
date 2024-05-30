@@ -5,7 +5,7 @@ import { useCart } from '../hook/useCart.js'
 import { AddToCartIcon, RemoveFromCartIcon } from '../icons/Icons.jsx'
 
 export const Productos = () => {
-    const { addToCart, removeFromCart, cart } = useCart()
+    const { addToCart, removeFromCart, cart, updateQuantity } = useCart()
 
     return (
         <article>
@@ -24,6 +24,7 @@ export const Productos = () => {
                     <div>
                         <div>
                             <strong>{prod.title}</strong><span>${prod.price}</span>
+                            <input type="number" onChange={(e) => updateQuantity(prod, e.target.value, false)}/>
                         </div>
 
                         <footer>
