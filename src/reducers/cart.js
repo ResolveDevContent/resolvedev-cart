@@ -81,8 +81,7 @@ const UPDATE_STATE_BY_ACTION = {
             return state;
         }
         
-        const { id } = action.payload,
-                new_state = state.filter((item) => item.id !== id);
+        const new_state = state.filter((item) => item.id !== action.payload);
 
         updateLocalStorage(new_state);
         return new_state;

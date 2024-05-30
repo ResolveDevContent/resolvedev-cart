@@ -42,7 +42,7 @@ export const Cart = () => {
                                                 value={item.quantity}/>
                                             <button onClick={() => updateQuantity(item, 1, true)}>+</button>
                                         </div>
-                                        <button onClick={() => removeFromCart(item)} title="Eliminar">
+                                        <button onClick={() => removeFromCart(item.id)} title="Eliminar">
                                             <RemoveFromCartIcon />
                                         </button>
                                     </footer>

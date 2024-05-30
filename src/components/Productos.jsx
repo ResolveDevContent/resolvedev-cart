@@ -30,7 +30,7 @@ export const Productos = () => {
                             <button 
                                 style={{ backgroundColor: inCart ? 'red' : '#00ac64' }}
                                 onClick={() => {
-                                    inCart ? removeFromCart(prod)
+                                    inCart ? removeFromCart(prod.id)
                                            : addToCart(prod)
                                         }}
                                     title={inCart ? 'Eliminar' : 'Agregar'}>
